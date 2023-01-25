@@ -11,10 +11,10 @@ import psutil
 import gc
 import collections
 import collections.abc
+import pyperclip
 from pptx import Presentation
 from pptx.util import Inches
 from pptx.enum.shapes import MSO_SHAPE_TYPE
-import psutil
 
 
 # This function is called to terminate any given program such as powerpoint or excel
@@ -53,19 +53,19 @@ def excel_pptx(path_slides, slide_index, path_excel, name_sheet):
     if ppt_slide is None:
         ppt_slide = ppt_presentation.Slides.Add(1, 12)
 
-    print("test 1 passed")
+    print("Test 1 passed")
 
     excel_app = win32com.client.Dispatch("Excel.Application")
     time.sleep(0.5)
 
-    print("test 2 passed")
+    print("Test 2 passed")
 
     workbook = excel_app.Workbooks.Open(path_excel, ReadOnly=1)
-    print("test 3 passed")
+    print("Test 3 passed")
     time.sleep(0.5)
     worksheet = workbook.Worksheets.Item(name_sheet)
 
-    print("test 4 passed")
+    print("Test 4 passed")
 
     used_range = worksheet.UsedRange
     used_range.Copy()
@@ -82,6 +82,8 @@ def excel_pptx(path_slides, slide_index, path_excel, name_sheet):
 
     print("Closing excel...")
     time.sleep(2)
+
+    pyperclip.copy('')
 
     workbook.Close(SaveChanges=False)
     print("Excel closed!")
@@ -131,12 +133,12 @@ def show_object_properties(path_slides, slide_index):
 
 
 # Specify the powerpoint path
-path_slides = r"path"
+path_slides = r""
 
 # Starts from index of 1
 slide_index = 5
-path_excel = r"path"
-name_sheet = "name"
+path_excel = r""
+name_sheet = ""
 
 # Change table properties
 width = 9.49

@@ -8,3 +8,15 @@ To run the program:
 ```sh
 python excel-pptx.py
 ```
+
+```sh
+pip install pyperclip
+```
+
+```sh
+pip install psutil
+```
+
+```sh
+pip install python-pptx
+```
