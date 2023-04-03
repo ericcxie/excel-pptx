@@ -6,17 +6,9 @@ users can also specify the width, height, top, left properties of the object
 To run the program:
 
 ```sh
+npm install
+```
+
+```sh
 python excel-pptx.py
-```
-
-```sh
-pip install pyperclip
-```
-
-```sh
-pip install psutil
-```
-
-```sh
-pip install python-pptx
 ```
